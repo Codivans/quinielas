@@ -78,7 +78,8 @@ const Quiniela = () => {
 
   const enviarQuiniela = async () => {
     if (!user) {
-      alert("Debes iniciar sesión");
+      toast.error('Debes iniciar sesion!');
+      navigate("/")
       return;
     }
 
@@ -90,7 +91,7 @@ const Quiniela = () => {
         jornada: dataQuiniela.length > 0 ? dataQuiniela[0].jornada : '',
         timestamp: new Date()
       });
-      alert("Quiniela enviada correctamente");
+      toast.success('Guardada, Suerte!')
       navigate("/resultados");
     } catch (error) {
       console.error("Error al enviar la quiniela: ", error);

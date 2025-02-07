@@ -56,7 +56,7 @@ const Auth = () => {
       {error && <p style={{ color: "red" }}>{error}</p>} {/* Mostrar el error */}
       <form onSubmit={handleSubmit}>
         {isRegistering && (
-          <input type="text" placeholder="Nombre" value={name} onChange={(e) => setName(e.target.value)} required />
+          <input type="text" style={{textTransform: "capitalize"}} placeholder="Nombre" value={name} onChange={(e) => setName(e.target.value)} required />
         )}
         <input type="email" placeholder="Correo Electrónico" value={email} onChange={(e) => setEmail(e.target.value)} required />
         <input type="password" placeholder="Contraseña" value={password} onChange={(e) => setPassword(e.target.value)} required />
