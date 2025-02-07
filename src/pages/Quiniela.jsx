@@ -3,6 +3,7 @@ import { db, auth } from "../firebase/firebaseConfig";
 import { collection, addDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { Navigation } from './../componentes/Navigation';
+import toast, { Toaster } from 'react-hot-toast';
 
 import CRUZAZUL from './../assets/CRUZ AZUL.png'
 import CHIVAS from './../assets/CHIVAS.png'
@@ -83,6 +84,7 @@ const Quiniela = () => {
       return;
     }
 
+
     try {
       await addDoc(collection(db, "quinielas"), {
         userId: user.uid,
@@ -97,7 +99,6 @@ const Quiniela = () => {
       console.error("Error al enviar la quiniela: ", error);
     }
   };
-
 
 
 
